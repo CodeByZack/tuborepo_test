@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev --parallel",
+    "dev": "npm run w-css & turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "w-css": "unocss \"{apps,packages}/**/*.tsx\" --watch",

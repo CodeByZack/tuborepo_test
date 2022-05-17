@@ -13,9 +13,9 @@ const Container = (props: PropsWithChildren<IProps>) => {
 
   return (
     <div className="bg-white dark:bg-black">
-      <nav className="sticky-nav flex justify-between items-center max-w-4xl w-full p-8 my-0 md:my-8 mx-auto bg-white dark:bg-black bg-opacity-60">
+      <nav className="flex justify-between items-center max-w-4xl w-full p-8 my-0 mx-auto bg-white dark:bg-black bg-opacity-60">
         {mounted && <ThemeIcon theme={theme} setTheme={setTheme} />}
-        {/* <div>
+        <div>
           <NextLink href="/blog">
             <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">博客</a>
           </NextLink>
@@ -28,7 +28,7 @@ const Container = (props: PropsWithChildren<IProps>) => {
           <NextLink href="/">
             <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">首页</a>
           </NextLink>
-        </div> */}
+        </div>
       </nav>
       <main className="max-w-4xl mx-auto flex flex-col justify-center bg-white dark:bg-black px-8">
         {children}
