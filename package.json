@@ -10,11 +10,15 @@
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "w-css": "unocss \"{apps,packages}/**/*.tsx\" --watch",
+    "b-css": "unocss \"{apps,packages}/**/*.tsx\""
   },
   "devDependencies": {
+    "@unocss/cli": "^0.33.5",
     "prettier": "^2.5.1",
-    "turbo": "latest"
+    "turbo": "latest",
+    "unocss": "^0.33.5"
   },
   "engines": {
     "npm": ">=7.0.0",

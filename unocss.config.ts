@@ -3,8 +3,8 @@ import {
   presetAttributify,
   presetIcons,
   presetUno,
-  presetWebFonts,
-  presetMini
+  // presetWebFonts,
+  // presetMini
   //   transformerDirectives,
   //   transformerVariantGroup,
 } from './apps/blog/node_modules/unocss';
@@ -17,12 +17,12 @@ const config: any = defineConfig<{}>({
     presetIcons({
       scale: 1.2,
     }),
-    presetWebFonts({
-      fonts: {
-        sans: 'Inter:100,200,400,700,800',
-        mono: 'IBM Plex Mono',
-      },
-    }),
+    // presetWebFonts({
+    //   fonts: {
+    //     sans: 'Inter:100,200,400,700,800',
+    //     mono: 'IBM Plex Mono',
+    //   },
+    // }),
   ],
   //   shortcuts: [
   //     {
