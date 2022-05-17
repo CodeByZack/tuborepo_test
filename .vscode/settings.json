@@ -1,0 +1,4 @@
+{
+  "cSpell.words": ["Attributify", "nextjs", "Plex", "turborepo", "unocss"],
+  "eslint.workingDirectories": ["apps/blog"],
+}
