@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Button, KEditor } from 'ui';
-import KPreview from 'ui/KPreview';
+import { Button, KEditor, KPreview } from 'ui';
 import { compileMdx, createHtml } from 'utils';
 import Container from '../components/Container';
 
