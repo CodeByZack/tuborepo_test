@@ -13,6 +13,7 @@ const BlogEditor = (props: IProps) => {
     <Container>
       <div>
         <Button
+          text="trigger"
           onClick={async () => {
             const mdxStr = await compileMdx(valueRef.current);
             const htmlContent = createHtml({ mdxStr });

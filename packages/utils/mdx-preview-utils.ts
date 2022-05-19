@@ -33,15 +33,17 @@ const PREVIEW_IMPORT_MAP = `<script async src="https://ga.jspm.io/npm:es-module-
   {
     "imports": {
       "react": "https://cdn.skypack.dev/react",
-      "react-dom": "https://cdn.skypack.dev/react-dom"
+      "react-dom": "https://cdn.skypack.dev/react-dom",
+      "components": "./blog-components.js"
     }
   }
   </script>`;
 const PREVIEW_MDX_WRAPPER = `<script type="module">
     import ReactDom from 'react-dom';
+    import components from 'components';    
     MDX_STRING
     ReactDom.render(
-      React.createElement(MDXContent),
+      React.createElement(MDXContent,{ components }),
       document.querySelector('#PREVIEW_CONTAINER')
     );
   </script>`;

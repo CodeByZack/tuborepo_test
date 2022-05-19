@@ -5,14 +5,8 @@
   "types": "./index.tsx",
   "license": "MIT",
   "scripts": {
-    "build" : "tsup index.tsx"
-  },
-  "tsup": {
-    "entry": ["index.ts"],
-    "splitting": false,
-    "sourcemap": true,
-    "clean": true,
-    "format": ["esm"]
+    "dev" : "tsup --watch",
+    "build" : "tsup"
   },
   "devDependencies": {
     "@types/react": "^17.0.37",

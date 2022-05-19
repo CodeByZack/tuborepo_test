@@ -1,9 +1,11 @@
+import React from 'react';
 // Button.tsx
 var Button = (props) => {
-  const { onClick } = props;
+  const { onClick, style, text } = props;
   return /* @__PURE__ */ React.createElement("button", {
+    style,
     onClick
-  }, "Boop");
+  }, text);
 };
 
 // ThemeIcon.tsx
@@ -32,37 +34,12 @@ var ThemeIcon = (props) => {
   })));
 };
 
-// KPreview.tsx
-var KPreview = (props) => {
-  const { srcDoc } = props;
-  return /* @__PURE__ */ React.createElement("div", {
-    style: { height: "100%" }
-  }, /* @__PURE__ */ React.createElement("iframe", {
-    width: "100%",
-    height: "100%",
-    className: "iframe",
-    srcDoc
-  }));
-};
-
-// KEditor.tsx
-import MonacoEditor from "@monaco-editor/react";
-var KEditor = (props) => {
-  const { onMount, onChange, defaultValue } = props;
-  return /* @__PURE__ */ React.createElement("div", {
-    className: "h-full"
-  }, /* @__PURE__ */ React.createElement(MonacoEditor, {
-    onMount,
-    theme: "vs-dark",
-    onChange,
-    defaultLanguage: "javascript",
-    defaultValue
-  }));
-};
-export {
+// blog-components.ts
+var BlogComponents = {
   Button,
-  KEditor,
-  KPreview,
   ThemeIcon
 };
-//# sourceMappingURL=index.mjs.map
+var blog_components_default = BlogComponents;
+export {
+  blog_components_default as default
+};
