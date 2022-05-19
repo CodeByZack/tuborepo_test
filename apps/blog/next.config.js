@@ -1,4 +1,4 @@
-const withTM = require('next-transpile-modules')(['ui'],{ debug : true });
+const withTM = require('next-transpile-modules')(['ui','utils']);
 // const UnoCSS = require('@unocss/webpack').default;
 
 module.exports = withTM({
