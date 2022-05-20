@@ -73,7 +73,6 @@ importers:
   packages/ui:
     specifiers:
       '@geist-ui/core': ^2.3.8
-      '@geist-ui/icons': ^1.0.2
       '@monaco-editor/react': ^4.4.5
       '@types/react': ^17.0.37
       '@types/react-dom': ^17.0.11
@@ -84,7 +83,6 @@ importers:
       utils: workspace:*
     dependencies:
       '@geist-ui/core': 2.3.8
-      '@geist-ui/icons': 1.0.2_@geist-ui+core@2.3.8
       '@monaco-editor/react': 4.4.5
     devDependencies:
       '@types/react': 17.0.43
@@ -218,15 +216,6 @@ packages:
       react-dom: '>=16.9.0'
     dependencies:
       '@babel/runtime': 7.17.8
-    dev: false
-
-  /@geist-ui/icons/1.0.2_@geist-ui+core@2.3.8:
-    resolution: {integrity: sha512-Npfa0NW6fQ31qw/+iMPWbs1hAcJ/3FqBjSLYgEfITDqy/3TJFpFKeVyK04AC/hTmYTsdNruVYczqPNcham5FOQ==}
-    peerDependencies:
-      '@geist-ui/core': '>=1.0.0'
-      react: '>=16.13.0'
-    dependencies:
-      '@geist-ui/core': 2.3.8
     dev: false
 
   /@geist-ui/icons/1.0.2_react@17.0.2:
