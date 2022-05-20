@@ -12,6 +12,10 @@ export const assembleHtml = (head: string, body: string) => {
   <html>
   <head>
       <meta charset="UTF-8" />
+      <style>
+        body{ min-height : 100vh; background-color:#1e1e1e }   
+      </style>
+      <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@unocss/reset@0.33.5/tailwind.css"/>
       ${head}
   </head>
   <body>
@@ -20,10 +24,14 @@ export const assembleHtml = (head: string, body: string) => {
   </html>`;
 };
 
-interface IHtmlSource {
-  mdxStr: string;
+export interface IHtmlSource {
+  /** mdx-js 编译出来的结果 需要放到script标签上*/
+  mdxStr?: string;
+  /** 直接放入body标签之间的css相关字符串 使用<style></style>包裹*/
   cssStr?: string;
+  /** script url 地址数组 */
   scripts?: string[];
+  /** css url 地址数组 */
   cssLinks?: string[];
 }
 
@@ -65,7 +73,9 @@ export const createHtml = (htmlSources: IHtmlSource) => {
     return `<style>${cssStr}</style>`;
   };
   const head = `<head>\n${getCssTag()}${getScriptTag()}\n${getStyleTag()}\n</head>`;
-  const MDX_SCRIPT = PREVIEW_MDX_WRAPPER.replace('MDX_STRING', mdxStr);
+  const MDX_SCRIPT = mdxStr
+    ? PREVIEW_MDX_WRAPPER.replace('MDX_STRING', mdxStr)
+    : '';
   const body = `<body>\n${PREVIEW_CONTAINER}\n${PREVIEW_IMPORT_MAP}\n${MDX_SCRIPT}\n</body>`;
   const finalHtml = assembleHtml(head, body);
   return finalHtml;

@@ -1,11 +1,11 @@
 import React from 'react';
 // Button.tsx
 var Button = (props) => {
-  const { onClick, style, text } = props;
+  const { onClick, style, children } = props;
   return /* @__PURE__ */ React.createElement("button", {
     style,
     onClick
-  }, text);
+  }, children);
 };
 
 // ThemeIcon.tsx

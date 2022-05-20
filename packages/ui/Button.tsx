@@ -1,17 +1,17 @@
+import { PropsWithChildren } from 'react';
 import { CSSProperties } from 'react';
 interface IButtonProps {
   onClick?: () => void;
   style?: CSSProperties;
-  text: string;
 }
 
-export const Button = (props: IButtonProps) => {
-  const { onClick, style, text } = props;
+export const Button = (props: PropsWithChildren<IButtonProps>) => {
+  const { onClick, style, children } = props;
 
   
   return (
     <button style={style} onClick={onClick}>
-      {text}
+      {children}
     </button>
   );
 };
