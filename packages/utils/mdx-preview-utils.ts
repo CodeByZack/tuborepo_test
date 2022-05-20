@@ -13,7 +13,7 @@ export const assembleHtml = (head: string, body: string) => {
   <head>
       <meta charset="UTF-8" />
       <style>
-        body{ min-height : 100vh; background-color:#1e1e1e }   
+        body{ min-height : 100vh; background-color:#1e1e1e; color : #fff; }   
       </style>
       <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/@unocss/reset@0.33.5/tailwind.css"/>
       ${head}

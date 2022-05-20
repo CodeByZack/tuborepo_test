@@ -14,6 +14,7 @@ import {
 import { compileMdx, createHtml } from 'utils';
 import Splitter, { SplitDirection } from '@devbookhq/splitter';
 import { MoreVertical, Sidebar } from '@geist-ui/icons';
+import repoUtil from 'utils/github-utils';
 
 interface IProps {}
 
@@ -71,12 +72,11 @@ const BlogEditor = (props: IProps) => {
                   type="abort"
                   icon={<MoreVertical />}
                   auto
-                  // onClick={async () => {
-                  //   const mdxStr = await compileMdx(valueRef.current);
-                  //   const htmlContent = createHtml({ mdxStr });
-                  //   console.log({ mdxStr });
-                  //   setSrcDoc(htmlContent);
-                  // }}
+                  onClick={()=>{
+                    repoUtil.init();
+                    repoUtil.getRepo();
+
+                  }}
                 />
               </Tooltip>
             </div>

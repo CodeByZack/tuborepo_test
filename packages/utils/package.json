@@ -9,6 +9,7 @@
     "@mdx-js/react": "^2.1.1",
     "config": "workspace:*",
     "mdx-prism": "^0.3.4",
+    "octokit": "^1.7.1",
     "remark-autolink-headings": "^7.0.1",
     "remark-code-titles": "^0.1.2",
     "remark-gfm": "^3.0.1",
