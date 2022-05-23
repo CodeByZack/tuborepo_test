@@ -14,7 +14,7 @@ const init = (token = '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') => {
 
 const getRepo = async () => {
   if (!octokitInstance) return null;
-  const repo = await octokitInstance.rest.repos. ({
+  const repo = await octokitInstance.rest.repos.get({
     owner: OWNER,
     repo: REPO,
   });
