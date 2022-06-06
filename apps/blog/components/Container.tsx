@@ -12,7 +12,7 @@ const Container = (props: PropsWithChildren<IProps>) => {
   useEffect(() => setMounted(true), []);
 
   return (
-    <div className="bg-white dark:bg-black">
+    <div className="bg-white dark:bg-black min-h-screen">
       <nav className="flex justify-between items-center max-w-4xl w-full p-8 my-0 mx-auto bg-white dark:bg-black bg-opacity-60">
         {mounted && <ThemeIcon theme={theme} setTheme={setTheme} />}
         <div>

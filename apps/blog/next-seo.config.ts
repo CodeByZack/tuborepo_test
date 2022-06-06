@@ -1,5 +1,5 @@
-const title = '行者、空山 – 走吧，走吧，人总要学着自己长大。';
-const description = '一个热爱 JavaScript , React 的前端工程师。';
+const title = '行者、空山的博客';
+const description = '一个迷茫不怎么热爱生活的人。。。';
 
 const SEO = {
   title,

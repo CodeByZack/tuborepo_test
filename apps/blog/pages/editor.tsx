@@ -73,8 +73,8 @@ const BlogEditor = (props: IProps) => {
                   icon={<MoreVertical />}
                   auto
                   onClick={()=>{
-                    repoUtil.init();
-                    repoUtil.getRepo();
+                    // repoUtil.init();
+                    // repoUtil.getRepo();
 
                   }}
                 />
