@@ -1,9 +1,11 @@
 import { Button } from "./Button";
 import { ThemeIcon } from "./ThemeIcon";
+import Image from 'next/image';
 
 
-const BlogComponents : any = {
+export const BlogComponents : any = {
     Button,
+    Image,
     ThemeIcon
 }
 

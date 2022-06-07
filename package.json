@@ -11,8 +11,8 @@
     "dev": "npm run w-css & turbo run dev --parallel",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "w-css": "unocss \"{apps,packages}/**/*.tsx\" --watch",
-    "b-css": "unocss \"{apps,packages}/**/*.tsx\""
+    "w-css": "unocss \"{apps,packages}/**/*.{tsx,css}\" --watch",
+    "b-css": "unocss \"{apps,packages}/**/*.{tsx,css}\""
   },
   "devDependencies": {
     "@unocss/cli": "^0.33.5",

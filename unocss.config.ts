@@ -3,6 +3,7 @@ import {
   presetAttributify,
   presetIcons,
   presetUno,
+  transformerDirectives,
   // presetWebFonts,
   // presetMini
   //   transformerDirectives,
@@ -42,7 +43,7 @@ const config: any = defineConfig<{}>({
   //     ],
   //     [/^badge-(.*)$/, ([, c]) => `bg-${c}4:10 text-${c}5 rounded`],
   //   ],
-  //   transformers: [transformerVariantGroup(), transformerDirectives()],
+  transformers: [transformerDirectives()],
 });
 
 export default config;
