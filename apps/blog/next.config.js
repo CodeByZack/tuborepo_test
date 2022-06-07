@@ -4,6 +4,9 @@ const withTM = require('next-transpile-modules')(['ui','utils']);
 module.exports = withTM({
   reactStrictMode: true,
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
+    if (isServer) {
+      require('./utils/generate-sitemap');
+    }
     // Important: return the modified config
     // config.plugins.push(UnoCSS({}));
     // if (buildId !== "development") {

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Container from '../components/Container';
 import BlogSeo from './BlogSeo';
 import Link from 'next/link';
-import { IArticleDetail } from '../pages/type';
+import { IArticleDetail } from '../type';
 import dayjs from 'dayjs';
 import { PropsWithChildren } from 'react';
 

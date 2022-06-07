@@ -1,7 +1,7 @@
 import ArticleEnter from '../components/ArticleEnter';
 import Container from '../components/Container';
 import { getAllFilesFrontMatter } from '../utils/mdx';
-import { IArticleFrontMatter } from './type';
+import { IArticleFrontMatter } from '../type';
 
 interface IProps {
   posts: IArticleFrontMatter[];

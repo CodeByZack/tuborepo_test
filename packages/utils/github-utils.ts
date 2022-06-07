@@ -23,7 +23,7 @@ const getRepo = async () => {
 
 const getRepoFile = async (path: string) => {
   if (!octokitInstance) return null;
-  const repo = await octokitInstance.rest.repos.getContent({
+  const repo: any = await octokitInstance.rest.repos.getContent({
     owner: OWNER,
     repo: REPO,
     path,
@@ -52,11 +52,11 @@ const updateRepoFile = async (updateObj: any) => {
   );
 };
 
-const repoUtil = {
+const repoUtil: any = {
   init,
   getRepoFile,
   updateRepoFile,
-  getRepo
+  getRepo,
 };
 
 export default repoUtil;

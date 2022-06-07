@@ -2,7 +2,7 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 import { compileMdx_node } from 'utils';
-import { IArticleFrontMatter } from '../pages/type';
+import { IArticleFrontMatter } from '../type';
 import readingTime from './read-time';
 
 const root = process.cwd();
