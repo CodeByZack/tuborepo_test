@@ -25,11 +25,11 @@ const BlogLayout = (props: PropsWithChildren<IProps>) => {
         image=""
         {...post}
       />
-      <article className="heti heti--classic flex flex-col justify-center items-start max-w-2xl mx-auto mb-16 w-full">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
+      <article className="heti heti--serif flex flex-col justify-center text-slate-900 items-start max-w-2xl mx-auto mb-16 w-full">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 dark:text-gray-400">
           {post.title}
         </h1>
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full mt-2 mb-8">
+        <div className="flex flex-row justify-between items-start md:items-center w-full mt-2 mb-8">
           <div className="flex items-center">
             <Image
               alt="行者、空山"
@@ -43,13 +43,15 @@ const BlogLayout = (props: PropsWithChildren<IProps>) => {
               {dayjs(post.publishedAt).format('YYYY-MM-DD')}
             </span>
           </div>
-          <span className="text-sm text-gray-500 min-w-32 mt-2 md:mt-0">
+          <span className="text-sm text-gray-500">
             {post.readingTime.text}
             {/* {` • `} */}
             {/* <ViewCounter slug={frontMatter.slug} /> */}
           </span>
         </div>
-        <div className="max-w-none w-full mb-6">{children}</div>
+        <div className="max-w-none w-full mb-6 dark:text-gray-400">
+          {children}
+        </div>
         <div className="text-sm text-gray-700 dark:text-gray-300">
           纠正错误 {` • `}
           <a

@@ -4,7 +4,7 @@ import { DefaultSeo } from 'next-seo';
 // import your default seo configuration
 import SEO from '../next-seo.config';
 import '@unocss/reset/tailwind.css'
-import "../styles/index.css";
+import "../styles/heti.css";
 import "../styles/code.css";
 import "../../../uno.css";
 

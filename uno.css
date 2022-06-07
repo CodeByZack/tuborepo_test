@@ -21,7 +21,6 @@
 .max-w-4xl{max-width:56rem;}
 .max-w-none{max-width:none;}
 .min-h-screen{min-height:100vh;}
-.min-w-32{min-width:8rem;}
 .w-\[100px\!important\]{width:100px!important;}
 .w-10{width:2.5rem;}
 .w-4{width:1rem;}
@@ -32,6 +31,7 @@
 [h1=""]{height:0.25rem;}
 [w~="\32 5px"]{width:25px;}
 .flex{display:flex;}
+.flex-row{flex-direction:row;}
 .flex-col{flex-direction:column;}
 .cursor-pointer{cursor:pointer;}
 .items-start{align-items:flex-start;}
@@ -75,14 +75,13 @@
 .text-gray-700{--un-text-opacity:1;color:rgba(55,65,81,var(--un-text-opacity));}
 .text-gray-800{--un-text-opacity:1;color:rgba(31,41,55,var(--un-text-opacity));}
 .text-gray-900{--un-text-opacity:1;color:rgba(17,24,39,var(--un-text-opacity));}
+.text-slate-900{--un-text-opacity:1;color:rgba(15,23,42,var(--un-text-opacity));}
 [content~="initial-scale\=1"]{content:"initial-scale=1";}
 [content~="width\=device-width\,"]{content:"width=device-width,";}
 @media (min-width: 640px){
 .sm\:p-4{padding:1rem;}
 }
 @media (min-width: 768px){
-.md\:mt-0{margin-top:0rem;}
-.md\:flex-row{flex-direction:row;}
 .md\:items-center{align-items:center;}
 .md\:text-5xl{font-size:3rem;line-height:1;}
 .md\:text-xl{font-size:1.25rem;line-height:1.75rem;}
