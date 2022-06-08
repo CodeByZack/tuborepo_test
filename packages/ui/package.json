@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "main": "./index.tsx",
   "types": "./index.tsx",
+  "module": "./index.tsx",
+  "sideEffects": false,
   "license": "MIT",
   "scripts": {
     "dev": "tsup --watch",
@@ -19,7 +21,6 @@
     "utils": "workspace:*"
   },
   "dependencies": {
-    "@geist-ui/core": "^2.3.8",
     "@monaco-editor/react": "^4.4.5"
   }
 }

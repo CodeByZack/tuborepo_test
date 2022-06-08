@@ -3,7 +3,7 @@ interface IProps {
   setTheme: (theme: string) => void;
 }
 
-export const ThemeIcon = (props: IProps) => {
+const ThemeIcon = (props: IProps) => {
   const { theme, setTheme } = props;
 
   return (
@@ -38,3 +38,5 @@ export const ThemeIcon = (props: IProps) => {
     </button>
   );
 };
+
+export default ThemeIcon;

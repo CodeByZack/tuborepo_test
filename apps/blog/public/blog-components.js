@@ -1189,6 +1189,7 @@ var Button = (props) => {
     onClick
   }, children);
 };
+var Button_default = Button;
 
 // ThemeIcon.tsx
 init_esm_shims();
@@ -1216,13 +1217,14 @@ var ThemeIcon = (props) => {
     d: "M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
   })));
 };
+var ThemeIcon_default = ThemeIcon;
 
 // blog-components.ts
 var import_image = __toESM(require_image2());
 var BlogComponents = {
-  Button,
+  Button: Button_default,
   Image: import_image.default,
-  ThemeIcon
+  ThemeIcon: ThemeIcon_default
 };
 var blog_components_default = BlogComponents;
 export {

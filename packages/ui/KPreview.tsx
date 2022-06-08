@@ -18,7 +18,7 @@ const getSrcDoc = (params: IProps) => {
   return resultStr;
 };
 
-export const KPreview = (props: IProps) => {
+const KPreview = (props: IProps) => {
   const { srcDoc, mdxStr, cssStr, scripts, cssLinks } = props;
 
   const realSrcDoc = useMemo(() => {
@@ -36,3 +36,5 @@ export const KPreview = (props: IProps) => {
     </div>
   );
 };
+
+export default KPreview;

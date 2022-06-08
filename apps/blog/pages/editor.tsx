@@ -1,20 +1,21 @@
 import React, { useRef, useState } from 'react';
-import {
-  Text,
-  CssBaseline,
-  GeistProvider,
-  KEditor,
-  KPreview,
-  Tree,
-  Avatar,
-  Button,
-  Tabs,
-  Tooltip,
-} from 'ui';
+import { KEditor, KPreview } from 'ui';
+// import { KPreview } from 'ui/KPreview';
+
 import { compileMdx, createHtml } from 'utils';
 import Splitter, { SplitDirection } from '@devbookhq/splitter';
 import { MoreVertical, Sidebar } from '@geist-ui/icons';
 import repoUtil from 'utils/github-utils';
+import {
+  GeistProvider,
+  CssBaseline,
+  Avatar,
+  Tree,
+  Tabs,
+  Tooltip,
+  Text,
+  Button,
+} from '@geist-ui/core';
 
 interface IProps {}
 
@@ -26,7 +27,7 @@ const BlogEditor = (props: IProps) => {
     <GeistProvider themeType="dark">
       <CssBaseline />
       <div className="w-screen h-screen bg-[#1e1e1e]">
-        <Splitter initialSizes={[15, 100]} minWidths={[180,1000]}>
+        <Splitter initialSizes={[15, 100]} minWidths={[180, 1000]}>
           <div className="h-full">
             <div className="flex items-center justify-between h-[38px] b-y-1 b-[#404040] p-1 box-border">
               <div className="flex items-center">
@@ -67,15 +68,19 @@ const BlogEditor = (props: IProps) => {
                 <Tabs.Item label="HTML" value="html"></Tabs.Item>
                 <Tabs.Item label="CSS" value="css"></Tabs.Item>
               </Tabs>
-              <Tooltip portalClassName="w-[100px!important]" trigger="click" placement="bottomEnd" text={"目录"}>
+              <Tooltip
+                portalClassName="w-[100px!important]"
+                trigger="click"
+                placement="bottomEnd"
+                text={'目录'}
+              >
                 <Button
                   type="abort"
                   icon={<MoreVertical />}
                   auto
-                  onClick={()=>{
+                  onClick={() => {
                     // repoUtil.init();
                     // repoUtil.getRepo();
-
                   }}
                 />
               </Tooltip>

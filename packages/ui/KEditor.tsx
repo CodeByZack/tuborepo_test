@@ -5,7 +5,7 @@ interface IProps {
   defaultValue?: string;
 }
 
-export const KEditor = (props: IProps) => {
+const KEditor = (props: IProps) => {
   const { onMount, onChange, defaultValue } = props;
 
   return (
@@ -20,3 +20,5 @@ export const KEditor = (props: IProps) => {
     </div>
   );
 };
+
+export default KEditor;

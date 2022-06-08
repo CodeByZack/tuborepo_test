@@ -27,11 +27,13 @@ export default function Sentence() {
         <p className="text-gray-600 dark:text-gray-400 mb-4">
           年少时的梦啊，像朵永不凋零的花儿。
         </p>
-        {sentenceData.filter(v=>v).map((txt) => (
-          <p key={txt} className="text-gray-800 dark:text-gray-200 mb-4">
-            {txt}
-          </p>
-        ))}
+        {sentenceData
+          .filter((v) => v)
+          .map((txt) => (
+            <p key={txt} className="text-gray-800 dark:text-gray-200 mb-4">
+              {txt}
+            </p>
+          ))}
       </div>
     </Container>
   );

@@ -5,7 +5,7 @@ interface IButtonProps {
   style?: CSSProperties;
 }
 
-export const Button = (props: PropsWithChildren<IButtonProps>) => {
+const Button = (props: PropsWithChildren<IButtonProps>) => {
   const { onClick, style, children } = props;
 
   
@@ -15,3 +15,5 @@ export const Button = (props: PropsWithChildren<IButtonProps>) => {
     </button>
   );
 };
+
+export default Button;
