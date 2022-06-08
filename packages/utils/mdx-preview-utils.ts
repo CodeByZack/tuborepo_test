@@ -42,6 +42,7 @@ const PREVIEW_IMPORT_MAP = `<script async src="https://ga.jspm.io/npm:es-module-
     "imports": {
       "react": "https://cdn.skypack.dev/react",
       "react-dom": "https://cdn.skypack.dev/react-dom",
+      "@geist-ui/core": "https://cdn.skypack.dev/@geist-ui/core",
       "components": "./blog-components.js"
     }
   }

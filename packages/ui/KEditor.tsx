@@ -14,7 +14,7 @@ const KEditor = (props: IProps) => {
         onMount={onMount}
         theme="vs-dark"
         onChange={onChange}
-        defaultLanguage="javascript"
+        defaultLanguage="markdown"
         defaultValue={defaultValue}
       />
     </div>

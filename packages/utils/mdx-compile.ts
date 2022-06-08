@@ -1,4 +1,4 @@
-import { compile } from '@mdx-js/mdx';
+import { compile, evaluate, EvaluateOptions } from '@mdx-js/mdx';
 //@ts-ignore
 import mdxPrism from 'mdx-prism';
 //@ts-ignore
@@ -24,6 +24,24 @@ export const compileMdx = async (content: string) => {
   } catch (error) {
     console.log(error);
     throw new Error(error as any);
+  }
+};
+
+export const evaluateMdx = async (content: string, config: EvaluateOptions) => {
+  try {
+    const res = await evaluate(content, {
+      remarkPlugins: [
+        remarkAutolinkHeadings,
+        remarkSlug,
+        remarkCodeTitles,
+        remarkGfm,
+      ],
+      useDynamicImport : true,
+      ...config,
+    });
+    return res;
+  } catch (error) {
+    console.log(error);
   }
 };
 

@@ -64,7 +64,7 @@ const BlogLayout = (props: PropsWithChildren<IProps>) => {
           {` • `}
           <Link
             href={{
-              pathname: '/modify_article',
+              pathname: '/editor',
               query: { path: onLineEditUrl(post.slug, type) },
             }}
           >

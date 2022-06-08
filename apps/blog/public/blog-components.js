@@ -1177,7 +1177,7 @@ var require_image2 = __commonJS({
   }
 });
 
-// blog-components.ts
+// blog-components.tsx
 init_esm_shims();
 
 // Button.tsx
@@ -1219,7 +1219,7 @@ var ThemeIcon = (props) => {
 };
 var ThemeIcon_default = ThemeIcon;
 
-// blog-components.ts
+// blog-components.tsx
 var import_image = __toESM(require_image2());
 var BlogComponents = {
   Button: Button_default,

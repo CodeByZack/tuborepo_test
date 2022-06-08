@@ -1,7 +1,7 @@
 import { defineConfig } from 'tsup'
 
 export default defineConfig({
-  entry : ['blog-components.ts'],
+  entry : ['blog-components.tsx'],
   splitting : false,
   clean : true,
   format : ['esm'],
