@@ -12,7 +12,7 @@ const Index = (props: IProps) => {
 
   return (
     <Container>
-      <div className="custom-div">
+      <div className="heti heti--serif">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 text-black dark:text-white">
           行者、空山的网站
         </h1>
@@ -29,7 +29,6 @@ const Index = (props: IProps) => {
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog');
-  console.log(posts);
   return { props: { posts } };
 }
 
