@@ -1,8 +1,11 @@
-const withTM = require('next-transpile-modules')(['ui','utils']);
+const withTM = require('next-transpile-modules')(['ui', 'utils']);
 // const UnoCSS = require('@unocss/webpack').default;
 
 module.exports = withTM({
   reactStrictMode: true,
+  images: {
+    domains: ['zackdkblog.oss-cn-beijing.aliyuncs.com'],
+  },
   webpack: (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
     if (isServer) {
       require('./utils/generate-sitemap');

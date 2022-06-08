@@ -1,5 +1,6 @@
 {
   "cSpell.words": [
+    "aliyuncs",
     "Attributify",
     "devbookhq",
     "heti",
@@ -10,7 +11,8 @@
     "resizer",
     "tsup",
     "turborepo",
-    "unocss"
+    "unocss",
+    "zackdkblog"
   ],
   "eslint.workingDirectories": ["apps/blog"],
 }
