@@ -1,8 +1,26 @@
-import { Card, Text, GeistProvider, Grid, Input, Modal } from '@geist-ui/core';
+import {
+  Card,
+  Text,
+  GeistProvider,
+  Grid,
+  Input,
+  Modal,
+  InputProps,
+} from '@geist-ui/core';
 import React from 'react';
 import { ConfirmHOC, makeImperative } from './ReactImperative';
 import { IInjectProps } from './ReactImperative/confirm-wrapper';
 interface IProps extends IInjectProps {}
+
+const FormItem = (props: { label: string } & InputProps) => {
+  const { label, ...rest } = props;
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', width : "100%", marginBottom : 16 }}>
+      <div style={{ lineHeight: '36px', flexShrink : 0 }}>{label}</div>
+      <Input style={{ flex: 1 }} {...rest} w="100%" placeholder="输入标题" />
+    </div>
+  );
+};
 
 const NewPostModal = (props: IProps) => {
   const { show, dismiss, proceed, cancel } = props;
@@ -14,30 +32,9 @@ const NewPostModal = (props: IProps) => {
         <Modal.Subtitle>它不能用作构造函数</Modal.Subtitle>
         <Modal.Content>
           <Grid.Container gap={1}>
-            <Grid xs={6}>
-              <Text small my={0}>
-                文章标题：
-              </Text>
-            </Grid>
-            <Grid xs={18}>
-              <Input w="100%" placeholder="输入标题" />
-            </Grid>
-            <Grid xs={6}>
-              <Text small my={0}>
-                文章描述：
-              </Text>
-            </Grid>
-            <Grid xs={18}>
-              <Input w="100%" placeholder="输入描述" />
-            </Grid>
-            <Grid xs={6}>
-              <Text small my={0}>
-                文件地址：
-              </Text>
-            </Grid>
-            <Grid xs={18}>
-              <Input w="100%" placeholder="输入文件地址" />
-            </Grid>
+            <FormItem label='文章标题：' placeholder='请输入标题' />
+            <FormItem label='文章描述：' placeholder='请输入描述' />
+            <FormItem label='文章地址：' placeholder='请输入文件地址' />
           </Grid.Container>
         </Modal.Content>
         <Modal.Action passive onClick={({ close }) => close()}>

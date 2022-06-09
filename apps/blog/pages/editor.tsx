@@ -63,7 +63,7 @@ const BlogEditor = (props: IProps) => {
 
   useEffect(() => {
     if (!editorReady) return;
-    if (!session.accessToken) return;
+    if (!session?.accessToken) return;
     repoUtil.init(session.accessToken as string);
     if (!path) {
       editPost(path as string);
