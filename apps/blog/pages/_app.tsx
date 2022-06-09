@@ -10,23 +10,30 @@ import '../styles/code.css';
 import '../../../uno.css';
 import { MDXProvider } from '@mdx-js/react';
 import { BlogComponents } from 'ui';
+import { SessionProvider } from 'next-auth/react';
+import { CssBaseline, GeistProvider } from '@geist-ui/core';
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps: { session, ...pageProps } }) => {
   return (
-    <ThemeProvider attribute="class">
-      <MDXProvider components={BlogComponents}>
-        <>
-          <Head>
-            <meta
-              content="width=device-width, initial-scale=1"
-              name="viewport"
-            />
-          </Head>
-          <DefaultSeo {...SEO} />
-          <Component {...pageProps} />
-        </>
-      </MDXProvider>
-    </ThemeProvider>
+    <GeistProvider themeType="dark">
+      <CssBaseline />
+      <SessionProvider session={session}>
+        <ThemeProvider attribute="class">
+          <MDXProvider components={BlogComponents}>
+            <>
+              <Head>
+                <meta
+                  content="width=device-width, initial-scale=1"
+                  name="viewport"
+                />
+              </Head>
+              <DefaultSeo {...SEO} />
+              <Component {...pageProps} />
+            </>
+          </MDXProvider>
+        </ThemeProvider>
+      </SessionProvider>
+    </GeistProvider>
   );
 };
 

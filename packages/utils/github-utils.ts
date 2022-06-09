@@ -5,20 +5,11 @@ const REPO = 'blog';
 
 let octokitInstance: Octokit | null = null;
 
-const init = (token = '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') => {
+const init = (token : string) => {
   if (!octokitInstance) {
     octokitInstance = new Octokit({ auth: token });
   }
   return octokitInstance;
-};
-
-const getRepo = async () => {
-  if (!octokitInstance) return null;
-  const repo = await octokitInstance.rest.repos.get({
-    owner: OWNER,
-    repo: REPO,
-  });
-  console.log({ repo });
 };
 
 const getRepoFile = async (path: string) => {
@@ -44,19 +35,17 @@ const updateRepoFile = async (updateObj: any) => {
     path: path,
     sha: sha,
     content: encodeTxt,
-    message: `modify ${path} by ${OWNER} at ${new Date().toLocaleString()}`,
+    message: `${sha ? "modify" : "create" } ${path} by ${OWNER} at ${new Date().toLocaleString()}`,
   };
-
   const res = await octokitInstance.rest.repos.createOrUpdateFileContents(
     params,
   );
 };
 
-const repoUtil: any = {
+const repoUtil = {
   init,
   getRepoFile,
   updateRepoFile,
-  getRepo,
 };
 
 export default repoUtil;

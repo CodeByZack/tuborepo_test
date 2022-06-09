@@ -20,18 +20,18 @@ const Container = (props: PropsWithChildren<IProps>) => {
           {/* <NextLink href="/blog">
             <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">博客</a>
           </NextLink> */}
-          {/* <NextLink href="/life">
-            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">生活</a>
-          </NextLink> */}
-          {/* <NextLink href="/about">
+          <NextLink href="/about">
             <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">关于</a>
-          </NextLink> */}
+          </NextLink>
+          <NextLink href="/sentence">
+            <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">小词</a>
+          </NextLink>
           <NextLink href="/">
             <a className="p-1 sm:p-4 text-gray-900 dark:text-gray-100">首页</a>
           </NextLink>
         </div>
       </nav>
-      <main className="max-w-4xl mx-auto flex flex-col justify-center bg-white dark:bg-black px-8">
+      <main className="max-w-3xl mx-auto flex flex-col justify-center bg-white dark:bg-black px-8">
         {children}
         <Footer />
       </main>

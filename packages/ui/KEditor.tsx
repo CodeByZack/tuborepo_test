@@ -1,5 +1,5 @@
 import MonacoEditor, { OnChange, OnMount } from '@monaco-editor/react';
-import './fixEditor.css';
+// import './fixEditor.css';
 interface IProps {
   onMount?: OnMount;
   onChange?: OnChange;
