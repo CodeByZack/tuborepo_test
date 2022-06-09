@@ -15,6 +15,37 @@ interface IProps {
   type: 'blog' | 'life';
 }
 
+export const BlogTitle = (props: { post: Partial<IArticleDetail> }) => {
+  const { post } = props;
+  return (
+    <>
+      <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 dark:text-gray-400">
+        {post.title}
+      </h1>
+      <div className="flex flex-row justify-between items-start md:items-center w-full mt-2 mb-8">
+        <div className="flex items-center">
+          <Image
+            alt="行者、空山"
+            height={24}
+            width={24}
+            src="/avatar.jpg"
+            className="rounded-full"
+          />
+          <span className="text-sm text-gray-700 dark:text-gray-300 ml-2">
+            {'行者、空山 / '}
+            {dayjs(post.publishedAt).format('YYYY-MM-DD')}
+          </span>
+        </div>
+        <span className="text-sm text-gray-500">
+          {post.readingTime?.text}
+          {/* {` • `} */}
+          {/* <ViewCounter slug={frontMatter.slug} /> */}
+        </span>
+      </div>
+    </>
+  );
+};
+
 const BlogLayout = (props: PropsWithChildren<IProps>) => {
   const { post, type, children } = props;
 
@@ -26,29 +57,7 @@ const BlogLayout = (props: PropsWithChildren<IProps>) => {
         {...post}
       />
       <article className="heti heti--serif flex flex-col justify-center text-slate-900 items-start max-w-4xl mx-auto mb-16 w-full">
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-4 dark:text-gray-400">
-          {post.title}
-        </h1>
-        <div className="flex flex-row justify-between items-start md:items-center w-full mt-2 mb-8">
-          <div className="flex items-center">
-            <Image
-              alt="行者、空山"
-              height={24}
-              width={24}
-              src="/avatar.jpg"
-              className="rounded-full"
-            />
-            <span className="text-sm text-gray-700 dark:text-gray-300 ml-2">
-              {'行者、空山 / '}
-              {dayjs(post.publishedAt).format('YYYY-MM-DD')}
-            </span>
-          </div>
-          <span className="text-sm text-gray-500">
-            {post.readingTime.text}
-            {/* {` • `} */}
-            {/* <ViewCounter slug={frontMatter.slug} /> */}
-          </span>
-        </div>
+        <BlogTitle post={post} />
         <div className="max-w-none w-full mb-6 dark:text-gray-400">
           {children}
         </div>
