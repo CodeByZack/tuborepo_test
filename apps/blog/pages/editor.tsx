@@ -3,16 +3,15 @@ import { KEditor } from 'ui';
 import { evaluateMdx } from 'utils';
 import { MoreVertical } from '@geist-ui/icons';
 import {
-  GeistProvider,
-  CssBaseline,
   Avatar,
-  Tooltip,
   Text,
   Button,
   Display,
   useToasts,
   Loading,
   Popover,
+  Code,
+  Spacer,
 } from '@geist-ui/core';
 import { NextSeo } from 'next-seo';
 import { useRouter } from 'next/router';
@@ -31,8 +30,16 @@ import { Monaco, OnMount } from '@monaco-editor/react';
 import { registerAutoCompletion } from '../utils/configEditor';
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import showNewPostModal from '../components/NewPostModal';
+import dayjs from 'dayjs';
 
 interface IProps {}
+
+const templateValue = (data) => `---
+title: '${data.title}'
+publishedAt: '${dayjs().format('YYYY-MM-DD HH:mm:ss')}'
+updatedAt: '${dayjs().format('YYYY-MM-DD HH:mm:ss')}'
+summary: '${data.desc}'
+---`;
 
 const BlogEditor = (props: IProps) => {
   const valueRef = useRef('');
@@ -53,7 +60,7 @@ const BlogEditor = (props: IProps) => {
     comp: MDXContent;
     postInfo: Partial<IArticleDetail>;
   }>({
-    comp: undefined,
+    comp: null,
     postInfo: {},
   });
 
@@ -65,7 +72,7 @@ const BlogEditor = (props: IProps) => {
     if (!editorReady) return;
     if (!session?.accessToken) return;
     repoUtil.init(session.accessToken as string);
-    if (!path) {
+    if (path) {
       editPost(path as string);
     } else {
       newAdd();
@@ -76,12 +83,16 @@ const BlogEditor = (props: IProps) => {
 
   const handleChange = useDebounceFn(async (v: string) => {
     const { data, content } = matter(v);
-    const res = await evaluateMdx(content, {
-      ...runtime,
-      ...provider,
-    } as any);
+    console.log({ data, content });
+    let comp = null;
+    if (content) {
+      comp = await evaluateMdx(content, {
+        ...runtime,
+        ...provider,
+      } as any);
+    }
     setMdxComp({
-      comp: res.default,
+      comp: comp?.default,
       postInfo: { ...data, readingTime: readingTime(content) },
     });
 
@@ -107,8 +118,16 @@ const BlogEditor = (props: IProps) => {
     setEditorReady(true);
   };
   const newAdd = async () => {
-    // const 
-    showNewPostModal({});
+    const info: any = await showNewPostModal({});
+    const content = templateValue({
+      title: info.title,
+      desc: info.desc,
+    });
+    dataHolder.current.editor.setValue(content);
+    dataHolder.current.editPost = {
+      path: info.path,
+      content,
+    };
   };
 
   const editPost = async (filePath: string) => {
@@ -133,6 +152,7 @@ const BlogEditor = (props: IProps) => {
         sha: sha || undefined,
         content: valueRef.current,
       });
+      dataHolder.current.editPost.sha = res.data.content.sha;
       setLoading(false);
       showToast({ text: '保存成功！' });
     } catch (error) {
@@ -150,6 +170,8 @@ const BlogEditor = (props: IProps) => {
               <Avatar w="25px" h="25px" text="K" mr="8px" />
               <Text margin={0} font="1rem" b>
                 Blog Editor
+                <Spacer inline w={1} />
+                <Code>{`path : ${dataHolder.current.editPost.path}`}</Code>
               </Text>
             </div>
             <Popover
@@ -175,15 +197,7 @@ const BlogEditor = (props: IProps) => {
                 </div>
               }
             >
-              <Button
-                type="abort"
-                icon={<MoreVertical />}
-                auto
-                onClick={() => {
-                  // repoUtil.init();
-                  // repoUtil.getRepo();
-                }}
-              />
+              <Button type="abort" icon={<MoreVertical />} auto />
             </Popover>
           </div>
           <div style={{ height: 'calc(100% - 38px)' }}>

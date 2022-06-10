@@ -9,7 +9,7 @@ const ThemeIcon = (props: IProps) => {
   return (
     <button
       type="button"
-      className="bg-gray-200 dark:bg-gray-800 rounded p-3 h-10 w-10"
+      className="bg-gray-200 dark:bg-gray-800 rounded p-3"
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
     >
       <svg

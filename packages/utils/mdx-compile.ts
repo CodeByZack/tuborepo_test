@@ -9,6 +9,7 @@ import remarkAutolinkHeadings from 'remark-autolink-headings';
 import { serialize } from 'next-mdx-remote/serialize';
 
 export const compileMdx = async (content: string) => {
+  if(!content) return null;
   try {
     const res = await compile(content, {
       remarkPlugins: [

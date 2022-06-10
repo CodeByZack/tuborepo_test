@@ -40,6 +40,7 @@ const updateRepoFile = async (updateObj: any) => {
   const res = await octokitInstance.rest.repos.createOrUpdateFileContents(
     params,
   );
+  return res;
 };
 
 const repoUtil = {
